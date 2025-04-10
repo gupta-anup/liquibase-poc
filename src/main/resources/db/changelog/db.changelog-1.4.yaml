@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: 6
+      author: anup.gupta
+      changes:
+        - insert:
+            tableName: roles
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: name
+                  value: TEMPORARY_ROLE
+      rollback:
+        - delete:
+            tableName: roles
+            where: id = 3
